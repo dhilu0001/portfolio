@@ -1,5 +1,5 @@
 import SectionTitle from "./SectionTitle";
-import aboutSvg from "../assets/about.svg";
+import aboutSvg from "../assets/about.jpg";
 const About = () => {
   return (
     <section className="bg-white py-20" id="about">
@@ -8,10 +8,11 @@ const About = () => {
         <article>
           <SectionTitle text="code and coffee" />
           <p className="text-slate-60 mt-8 leading-loose">
-            Emmet Abbreviation Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Id, ducimus? Animi reiciendis rerum quibusdam
-            error aut. Aut nulla odit autem suscipit, nobis perspiciatis
-            repellendus, nihil molestiae esse consequuntur vitae quos.
+            Fuelled by code and coffee, I embark on my journey of turning ideas
+            into reality. With each line of code, I'm driven by the desire to
+            create meaningful and impactful solutions. Whether it's a complex
+            algorithm or a sleek user interface, I find solace in the rhythm of
+            keystrokes and the aroma of freshly brewed coffee.
           </p>
         </article>
       </div>
