@@ -1,5 +1,5 @@
 import heroImg from "../assets/hero.jpg";
-import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { FaFileDownload, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -19,6 +19,9 @@ const Hero = () => {
             </a>
             <a href="https://www.linkedin.com/in/dhiluraj-v">
               <FaLinkedin className="h-8 w-8 text-slate-500 hover:text-black duration-300" />
+            </a>
+            <a href="https://drive.google.com/file/d/1BWhP0q6K-ewrxlXyiCNpdhBeMXYJDVaG/view?usp=sharing">
+              <FaFileDownload className="h-8 w-8 text-slate-500 hover:text-black duration-300" />
             </a>
           </div>
         </article>

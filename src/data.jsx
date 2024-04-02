@@ -29,6 +29,98 @@ export const skills = [
   },
 ];
 
+export const skillsProgress = [
+  {
+    id: nanoid(),
+    title: "React",
+    progress: 80,
+  },
+  {
+    id: nanoid(),
+    title: "HTML&CSS",
+    progress: 80,
+  },
+  {
+    id: nanoid(),
+    title: "Typescript",
+    progress: 70,
+  },
+  {
+    id: nanoid(),
+    title: "Redux/Toolkit",
+    progress: 80,
+  },
+  {
+    id: nanoid(),
+    title: "GraphQL",
+    progress: 70,
+  },
+  {
+    id: nanoid(),
+    title: "RTL/Jest",
+    progress: 80,
+  },
+  {
+    id: nanoid(),
+    title: "Javascript",
+    progress: 80,
+  },
+  {
+    id: nanoid(),
+    title: "Tailwind css",
+    progress: 60,
+  },
+  {
+    id: nanoid(),
+    title: "Aws Lambda",
+    progress: 60,
+  },
+  {
+    id: nanoid(),
+    title: "Node JS",
+    progress: 60,
+  },
+  {
+    id: nanoid(),
+    title: "Next JS",
+    progress: 40,
+  },
+  {
+    id: nanoid(),
+    title: "Azure Devops",
+    progress: 60,
+  },
+  {
+    id: nanoid(),
+    title: "dynamo DB",
+    progress: 60,
+  },
+  {
+    id: nanoid(),
+    title: "Devops pipeline",
+    progress: 70,
+  },
+  {
+    id: nanoid(),
+    title: "Git/Bitbucket",
+    progress: 80,
+  },
+  {
+    id: nanoid(),
+    title: "Material UI",
+    progress: 80,
+  },
+  {
+    id: nanoid(),
+    title: "Python",
+    progress: 30,
+  },
+  {
+    id: nanoid(),
+    title: "Playwright E2E",
+    progress: 50,
+  },
+]
 export const projects = [
   {
     id: nanoid(),
