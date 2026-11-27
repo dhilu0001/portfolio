@@ -1,18 +1,18 @@
-import ProjectsCard from "./ProjectsCard";
 import { projects } from "../data";
-import SectionTitle from "./SectionTitle";
 
-const Projects = () => {
-  return (
-    <section className="py-20 align-element" id="projects">
-      <SectionTitle text="web creations" />
-      <div className="py-16 grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
-        {projects.map((project) => {
-          return <ProjectsCard key={project.id} {...project} />;
-        })}
-      </div>
-    </section>
-  );
-};
+const Projects = () => (
+  <section id="projects" className="wrap py-24">
+    <h2 className="wide text-2xl font-semibold">Side projects</h2>
+    <div className="mt-10 grid gap-12 md:grid-cols-2">
+      {projects.map((p) => (
+        <article key={p.title} className="max-w-measure border-t-2 border-ink pt-5">
+          <h3 className="wide text-xl font-semibold">{p.title}</h3>
+          <p className="mt-3">{p.text}</p>
+          <a className="link mt-4 inline-block" href={p.url}>{p.linkText}</a>
+        </article>
+      ))}
+    </div>
+  </section>
+);
 
 export default Projects;

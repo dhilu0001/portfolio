@@ -1,149 +1,180 @@
-import { nanoid } from "nanoid";
-import { FaHtml5, FaJs, FaReact } from "react-icons/fa";
+// Everything on the page comes from this file. Keep it true: interviewers ask about all of it.
+
+export const profile = {
+  name: "Dhiluraj V",
+  firstName: "Dhiluraj",
+  role: "Senior AI Engineer",
+  location: "Kerala, India (IST)",
+  email: "dhilu0001@gmail.com",
+  github: "https://github.com/dhilu0001/",
+  linkedin: "https://www.linkedin.com/in/dhiluraj-v",
+  resume: "", // paste the new résumé PDF link here; the link hides while empty
+  photo: "/dhilu.jpg",
+};
+
+export const intro = {
+  headline:
+    "In 2015 I fixed Outlook on one laptop at a time. Now I build AI agents that investigate entire production systems on their own.",
+  lede:
+    "I'm Dhiluraj, a senior AI engineer. Eleven years of shipping software taught me what production really asks for. Today I put that into AI agents that engineers trust with their live systems.",
+};
 
 export const links = [
-  { id: nanoid(), href: "#home", text: "home" },
-  { id: nanoid(), href: "#skills", text: "skills" },
-  { id: nanoid(), href: "#about", text: "about" },
-  { id: nanoid(), href: "#projects", text: "projects" },
+  { href: "#timeline", text: "Timeline" },
+  { href: "#work", text: "Work" },
+  { href: "#projects", text: "Projects" },
+  { href: "#about", text: "About" },
+  { href: "#contact", text: "Contact" },
 ];
 
-export const skills = [
+// The career, oldest first. `scope` is how much of the system each era's work touched (0–100):
+// it drives the bar under each entry.
+export const eras = [
   {
-    id: nanoid(),
-    title: "React",
-    icon: <FaReact className="h-16 w-16 text-emerald-500" />,
-    text: "Advanced proficiency in React, developing efficient and interactive front-end applications with a strong emphasis on component-based architecture.",
+    year: "2015",
+    title: "Fixing machines one at a time",
+    where: "Wipro",
+    story:
+      "My first job was getting people's laptops working again. Instead of fixing each one by hand, I wrote VBScript and C# tools that repaired Outlook profiles and full C: drives remotely. That was the first lesson I kept: automate the fix, don't repeat it.",
+    stack: "VBScript, C#, Windows",
+    scope: 6,
+    scopeLabel: "one person's laptop",
   },
   {
-    id: nanoid(),
-    title: "HTML&CSS",
-    icon: <FaHtml5 className="h-16 w-16 text-emerald-500" />,
-    text: "Highly skilled in HTML & CSS, adeptly crafting visually appealing and responsive websites for optimal user experiences.",
+    year: "2018",
+    title: "Into the cloud",
+    where: "Wipro",
+    story:
+      "I moved to AWS and JavaScript. My Lambda functions picked Amazon orders off SQS and synced them to SAP, so inventory updated in real time instead of in overnight batches.",
+    stack: "AWS Lambda, Node.js, SQS, Apigee",
+    scope: 20,
+    scopeLabel: "an order pipeline",
   },
   {
-    id: nanoid(),
-    title: "Javascript",
-    icon: <FaJs className="h-16 w-16 text-emerald-500" />,
-    text: "Expertise in JavaScript, building interactive and dynamic web applications with a focus on seamless user interactions and functionality",
+    year: "2019",
+    title: "Building products people use",
+    where: "Wipro, then QBurst",
+    story:
+      "I passed the AWS Solutions Architect exam and started pairing Lambda with React. Over four years I shipped a pricing and bidding platform for freight brokers and carriers, and an order-tracking app used by more than 10,000 people.",
+    stack: "React, Redux, AWS Lambda, GraphQL",
+    scope: 38,
+    scopeLabel: "apps used by 10,000+ people",
+  },
+  {
+    year: "2023",
+    title: "Owning the whole stack",
+    where: "UST",
+    story:
+      "Python and FastAPI joined React, and I started owning features from database to UI. It's the stack behind the cloud resource portal I build today, and the investment tools 1,000+ users rely on.",
+    stack: "Python, FastAPI, React, TypeScript, Docker, Kubernetes",
+    scope: 55,
+    scopeLabel: "3,000+ cloud assets",
+  },
+  {
+    year: "2025",
+    title: "Teaching software to read",
+    where: "UST",
+    story:
+      "My first LLM system: RAG over Confluence and SharePoint. People ask questions or get a page summarised right inside Microsoft Teams, without digging through wikis.",
+    stack: "RAG, ChromaDB, Azure OpenAI, Microsoft Teams",
+    scope: 75,
+    scopeLabel: "a company's documentation",
+  },
+  {
+    year: "Now",
+    title: "Agents that investigate production",
+    where: "UST",
+    story:
+      "Since late 2025 I've been building the agent layer of an AI operations platform: an agent that works an incident the way a senior engineer would: across 140+ tools and 25+ systems, on its own. Alongside it I build the Backstage cloud resource portal. In 2026 I earned the Claude Certified Developer – Foundations credential with a full score.",
+    stack: "Strands Agents, Azure OpenAI, FastAPI, Redis, React, Backstage",
+    scope: 100,
+    scopeLabel: "a whole production estate",
   },
 ];
 
-export const skillsProgress = [
+// Deep dives. No client or internal product names: describe the system and the result.
+export const work = [
   {
-    id: nanoid(),
-    title: "React",
-    progress: 80,
+    title: "Production incident agent",
+    summary: "Turns a 45-minute incident hunt into a 2-minute answer",
+    problem:
+      "When production broke, engineers spent 30–60 minutes hopping between the ticketing system, Kubernetes, Grafana, cloud consoles and log stores, piecing the story together by hand.",
+    built: [
+      "The agent layer of a multi-tenant AI operations platform. Ask one question in plain English, and the agent loads the right runbooks, chooses from 140+ tools across 25+ connectors and runs 5–10 investigations in parallel.",
+      "Strands Agents and Azure OpenAI, FastAPI, a Redis job queue with async workers, and a React UI that streams every step of the agent's reasoning live.",
+      "Built to be trusted in production: read-only on Kubernetes and tickets, writes sandboxed behind human approval, and an audit trail of every call.",
+    ],
+    result:
+      "A root cause with the evidence attached in about 2 minutes. Built in roughly 100 days, now used by 6 teams, and presented at UST's Best of US Kochi 2026.",
   },
   {
-    id: nanoid(),
-    title: "HTML&CSS",
-    progress: 80,
+    title: "Cloud resource portal",
+    summary: "3,000+ cloud assets, one self-service portal, 40% off the Azure bill",
+    problem:
+      "Teams managed thousands of VMs, apps and platform services through tickets and one-off scripts. Onboarding was slow, and idle resources quietly kept costing money.",
+    built: [
+      "An internal developer portal on Backstage, with custom React and TypeScript plugins and the backend plugins and APIs behind them.",
+      "Self-service onboarding, backups, database refreshes and scheduling, plus LLM search across the portal.",
+    ],
+    result: "One place to run 3,000+ cloud assets, and an Azure bill 40% lower.",
   },
-  {
-    id: nanoid(),
-    title: "Typescript",
-    progress: 70,
-  },
-  {
-    id: nanoid(),
-    title: "Redux/Toolkit",
-    progress: 80,
-  },
-  {
-    id: nanoid(),
-    title: "GraphQL",
-    progress: 70,
-  },
-  {
-    id: nanoid(),
-    title: "RTL/Jest",
-    progress: 80,
-  },
-  {
-    id: nanoid(),
-    title: "Javascript",
-    progress: 80,
-  },
-  {
-    id: nanoid(),
-    title: "Tailwind css",
-    progress: 60,
-  },
-  {
-    id: nanoid(),
-    title: "Aws Lambda",
-    progress: 60,
-  },
-  {
-    id: nanoid(),
-    title: "Node JS",
-    progress: 60,
-  },
-  {
-    id: nanoid(),
-    title: "Next JS",
-    progress: 40,
-  },
-  {
-    id: nanoid(),
-    title: "Azure Devops",
-    progress: 60,
-  },
-  {
-    id: nanoid(),
-    title: "dynamo DB",
-    progress: 60,
-  },
-  {
-    id: nanoid(),
-    title: "Devops pipeline",
-    progress: 70,
-  },
-  {
-    id: nanoid(),
-    title: "Git/Bitbucket",
-    progress: 80,
-  },
-  {
-    id: nanoid(),
-    title: "Material UI",
-    progress: 80,
-  },
-  {
-    id: nanoid(),
-    title: "Python",
-    progress: 30,
-  },
-  {
-    id: nanoid(),
-    title: "Playwright E2E",
-    progress: 50,
-  },
-]
+];
+
 export const projects = [
   {
-    id: nanoid(),
-    img: "https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=800",
-    url: "https://nextjs-3-in-1-projects.vercel.app/",
-    github: "https://github.com/dhilu0001/nextjs-projects",
-    title: "Next.js Showcase: Building Flexibility and Power",
-    text: "Welcome to our first Next.js project! This project is a culmination of various features and functionalities aimed at showcasing the power and flexibility of Next.js. From basic counters to managing tasks and tracking drinks, this project offers a comprehensive demonstration of Next.js capabilities.",
+    title: "Market-signal agent",
+    text: "A personal agent for Indian stocks and IPOs. It reads tips from Telegram, pulls price history, news, IPO grey-market data and Reddit sentiment, and has Claude reason over all of it into an advisory signal.",
+    url: "https://stock-predictor-dashboard.vercel.app/",
+    linkText: "Open the live dashboard",
   },
   {
-    id: nanoid(),
-    img: "https://images.pexels.com/photos/12883026/pexels-photo-12883026.jpeg?auto=compress&cs=tinysrgb&w=800",
-    url: "https://cloud-monitor-dashboard-njw06df11-dhilurajs-projects.vercel.app/",
-    github: "https://github.com/dhilu0001/cloud-monitor-dashboard",
-    title: "Cloud Monitor Dashboard",
-    text: "A dashboard for monitoring cloud resources, displaying server status, resource usage, and alert notifications. Built with usability in mind, it provides real-time insights and interactive elements for efficient management of cloud operations. Simplify your cloud monitoring with our intuitive dashboard solution.",
+    title: "FoodVision",
+    text: "An EfficientNet-B2 image classifier trained with transfer learning on Food-101 in PyTorch, deployed as a live app on Hugging Face Spaces.",
+    url: "https://huggingface.co/spaces/Dhiluraj/foodvision_101",
+    linkText: "Try it on Hugging Face",
+  },
+];
+
+// Grouped by how recently he has used each tool, instead of star ratings. Keep in step with the résumé.
+export const toolkit = [
+  {
+    label: "Daily, in production",
+    items: [
+      "Strands Agents", "Azure OpenAI", "RAG", "ChromaDB", "Python", "FastAPI", "Redis", "React",
+      "TypeScript", "Backstage", "AKS / Kubernetes", "Grafana", "Prometheus", "Azure Monitor", "ServiceNow",
+    ],
   },
   {
-    id: nanoid(),
-    img: "https://images.pexels.com/photos/2148222/pexels-photo-2148222.jpeg?auto=compress&cs=tinysrgb&w=800",
-    url: "https://dhilu0001.github.io/kanban-board/",
-    github: "https://github.com/dhilu0001/kanban-board",
-    title: "Kanban Board: Streamline Your Workflow",
-    text: "Welcome to our Kanban board project! This tool is designed to help you streamline your workflow and manage tasks efficiently using the Kanban methodology. With intuitive drag-and-drop functionality and customizable columns, you can visualize your tasks, prioritize work, and track progress seamlessly.",
+    label: "Shipped before",
+    items: ["AWS Lambda", "SQS", "Node.js", "GraphQL", "Redux", "Next.js", "DynamoDB"],
+  },
+  {
+    label: "Training and learning",
+    items: ["PyTorch (transfer learning, fine-tuning)", "Claude API", "Docker"],
+  },
+];
+
+// The personal part, in his words.
+export const values = [
+  {
+    title: "How I work best",
+    text: [
+      "I do my best work in long, focused stretches: a clear problem, room to think and time to finish properly. Teams that write things down, save meetings for what really needs a conversation and protect deep work get the most out of me.",
+      "Async, remote-first teams suit me well, and I'm used to collaborating across time zones.",
+    ],
+  },
+  {
+    title: "Why I do this",
+    text: [
+      "The world still has plenty of hard problems, and I think technology is one of the best tools we have to solve them. I want to spend my time on the ones that matter and leave the earth a better place to live.",
+      "I've seen it in small ways already: the incident agent gives engineers back the hour they used to lose chasing an incident across ten tools. I want to do that at a bigger scale.",
+    ],
+  },
+  {
+    title: "When I'm not working",
+    text: [
+      "Learning is my hobby. Right now I'm working through Aurélien Géron's Hands-On Machine Learning with Scikit-Learn and PyTorch, one chapter and one notebook at a time.",
+      "And we travel. With a little one at home, I want my wife and daughter to see as many different corners of the world as we can.",
+    ],
   },
 ];
