@@ -2,8 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html { background: #EEF1EC; color: #18212B; scroll-behavior: smooth; }
+  body { font-family: "Source Serif 4", Georgia, serif; font-size: 1.125rem; line-height: 1.7; }
+  :focus-visible { outline: 3px solid #2C4FD8; outline-offset: 3px; border-radius: 2px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+}
+
 @layer components {
-  .align-element {
-    @apply mx-auto max-w-7xl px-8;
-  }
+  .wrap { @apply mx-auto max-w-6xl px-6 md:px-10; }
+  /* Years: Archivo at full width so the numerals read as the timeline itself. */
+  .year { font-family: "Archivo", sans-serif; font-stretch: 125%; font-weight: 800; letter-spacing: -0.02em; line-height: 0.9; }
+  .wide { font-family: "Archivo", sans-serif; font-stretch: 112%; }
+  .link { @apply text-cobalt underline decoration-1 underline-offset-4 hover:decoration-2; }
 }
